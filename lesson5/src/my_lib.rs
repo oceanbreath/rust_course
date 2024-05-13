@@ -53,7 +53,7 @@ fn to_slugify(original_text: &str) -> Result<String, Box<dyn Error>> {
     }
 }
 
-fn read_csv(original_text: &str) -> Result<(), Box<dyn Error>> {
+fn read_csv(original_text: &str) -> Result<String, Box<dyn Error>> {
     if original_text.trim().is_empty() {
         Err(From::from("Input text is empty".to_string()))
     } else {
