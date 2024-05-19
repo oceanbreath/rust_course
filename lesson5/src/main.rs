@@ -35,6 +35,9 @@ fn main() {
     println!("\nTrying to apply '{}'\n", &modification);
     println!("The text after modification:");
 
-    let modified_text = run(&original_text, &modification);
-    println!("{:?}", modified_text);
+    let modified_text = match run(&original_text, &modification) {
+        Ok(text) => text,
+        Err(_) => "Can't modify".to_string(),
+    };
+    println!("{}", modified_text);
 }
