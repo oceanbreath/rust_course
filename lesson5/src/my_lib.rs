@@ -79,34 +79,3 @@ fn read_csv<P: AsRef<Path>>(filename: P) -> Result<String, Box<dyn Error>> {
 
     Ok(table.to_string())
 }
-
-// fn read_csv(original_text: &str) -> Result<String, Box<dyn Error>> {
-//     if original_text.trim().is_empty() {
-//         Err(From::from("CSV file is empty".to_string()))
-//     } else {
-//         let mut rdr = csv::Reader::from_reader(original_text.as_bytes());
-//         let header = Row::from(rdr.headers()?.clone().iter());
-
-//         let mut table = Table::new();
-//         table
-//             .load_preset(UTF8_FULL)
-//             .apply_modifier(UTF8_ROUND_CORNERS)
-//             .set_header(header);
-
-//         for result in rdr.records() {
-//             let record = match result {
-//                 Err(e) => {
-//                     return Err(From::from(
-//                         "Failed to read file".to_string() + &e.to_string(),
-//                     ));
-//                 }
-
-//                 Ok(record) => record,
-//             };
-
-//             let row = Row::from(record.iter());
-//             table.add_row(row);
-//         }
-//         Ok(table.to_string())
-//     }
-// }
