@@ -1,4 +1,4 @@
-#Using <command> <input>
+#Using '<command> <input>'
 
 When using modifiers: 'uppercase', 'lowercase', 'no-spaces', 'slugify' in interactive mode, use a command like:
 ```
